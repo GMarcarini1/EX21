@@ -1,5 +1,9 @@
 <h1>EXERCICIO 1 G2</h1>
+Integrantes: Arthur Contri, Giovanni Marcarini, Rafael Vargas
 
+Todas as instruções doque cada integrante realizou está presente no começo do código
+
+<h3>INSTRUÇÕES</h3>
 No início do código, NECESSARIAMENTE, como comentário, devem constar:
 
 Matricula, nome e email de todos os integrantes do grupo
