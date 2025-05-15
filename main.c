@@ -1,3 +1,14 @@
+// Integrantes do grupo
+
+// Arthur Contri | 202410137 | arthur.202410137@unilasalle.edu.br
+// Responsável pela lapidação do código bruto, implementação da função de pesquisa e correção de bugs
+
+// Giovanni Marcarini | 202410131 | giovanni.202410131@unilasalle.edu.br 
+// Responsavel pela contrução das Funções POP, PUSH, EMPTY
+
+// Rafael Decarli | 202411103 | rafael.202411103@unilasalle.edu.br
+// Responsavel pelo inicio do código e contrução da lógica de programação
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,7 +33,7 @@ int inicia(PILHA *p, int qnt) {
 
   p->topo = -1;
   p->qntmax = qnt;
-  return 200;
+  return 0;
 }
 
 int verifica_vazia(PILHA *p){
@@ -58,9 +69,8 @@ int pop(PILHA *p){
   return 0;
 }
 
-
 int main(){
-  int qnt, i;
+  int qnt, i, pesquisa;
   PILHA *p;
   char letra;
 
@@ -97,7 +107,7 @@ int main(){
     printf("Nota G1:");
     scanf("%lf", &novo.g1);
 
-    printf("Nota g2:");
+    printf("Nota G2:");
     scanf("%lf", &novo.g2);
 
     novo.media = (novo.g1 + novo.g2)/2;
@@ -121,8 +131,26 @@ int main(){
     printf("%d\n", p->q[i].matricula);
   }
 
-  printf("Encerrando o Programa...");
+  printf("Digite o numero de matricula a pesquisar:");
+  scanf("%d", &pesquisa);
+
+  while (pesquisa != 0){
+    for(i=0; i <= p->topo; i++){
+      if(pesquisa == p->q[i].matricula) {
+        printf("Matrícula: %d\n", p->q[i].matricula);
+        printf("Nota G1: %.2lf\n", p->q[i].g1);
+        printf("Nota G2: %.2lf\n", p->q[i].g2);
+        printf("Média Final: %.2lf\n", p->q[i].media);
+      }
+    }
+
+    printf("Digite a matrícula a pesquisa (Digite 0 para sair):");
+    scanf("%d", &pesquisa);
+
+  }
   
+  printf("Encerrando o Programa...");
+
   free(p->q);
   free(p);
 
