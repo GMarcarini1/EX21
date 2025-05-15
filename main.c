@@ -135,7 +135,7 @@ int main(){
   scanf("%d", &pesquisa);
 
   while (pesquisa != 0){
-    for(i=0; i <= p->topo; i++){
+    for(i=p->topo; i >= 0; i--){
       if(pesquisa == p->q[i].matricula) {
         printf("Matrícula: %d\n", p->q[i].matricula);
         printf("Nota G1: %.2lf\n", p->q[i].g1);
@@ -148,7 +148,7 @@ int main(){
     scanf("%d", &pesquisa);
 
   }
-  
+
   printf("Encerrando o Programa...");
 
   free(p->q);
